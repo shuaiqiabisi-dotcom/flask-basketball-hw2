@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>籃球賽事紀錄網頁</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 30px; background-color: #f4f6f9; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { text-align: center; color: #1a252f; margin-bottom: 30px; }
+        .card { background: #ffffff; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid #007bff; }
+        .card h2 { margin-top: 0; color: #007bff; font-size: 1.4em; }
+        .date { color: #7f8c8d; font-size: 0.9em; margin-bottom: 12px; }
+        .content { line-height: 1.6; font-size: 1em; color: #444; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏀 籃球賽事紀錄系統</h1>
+        {% for game in games %}
+        <div class="card">
+            <h2>對手名稱：{{ game.title }}</h2>
+            <div class="date">比賽日期：{{ game.author }}</div>
+            <div class="content">比賽結果與得分紀錄：{{ game.content }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
